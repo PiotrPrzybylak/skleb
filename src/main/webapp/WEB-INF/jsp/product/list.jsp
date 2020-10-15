@@ -8,7 +8,7 @@
 <body>
 
 <c:forEach items="${products}" var="product">
-    <li>${product.name} : ${product.price} PLN</li>
+    <li><a href="/products/details?name=${product.name}">${product.name}</a> : ${product.price} PLN</li>
 </c:forEach>
 
 </body>
