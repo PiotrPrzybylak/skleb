@@ -18,6 +18,10 @@ public class ListServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
         request.setAttribute("products", productDao.all());
         getServletContext().getRequestDispatcher("/WEB-INF/jsp/product/list.jsp").forward(request, response);
     }

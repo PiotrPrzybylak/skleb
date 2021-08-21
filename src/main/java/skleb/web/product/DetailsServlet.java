@@ -15,6 +15,8 @@ public class DetailsServlet extends HttpServlet {
     private ProductDao productDao = new ProductDao();
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         request.setAttribute("product", productDao.byName(request.getParameter("name")));
         getServletContext().getRequestDispatcher("/WEB-INF/jsp/product/details.jsp").forward(request, response);
     }
